@@ -1,2 +1,0 @@
-# mobile application
-IOS - AWS
