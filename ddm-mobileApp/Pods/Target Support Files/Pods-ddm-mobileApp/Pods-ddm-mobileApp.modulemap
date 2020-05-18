@@ -1,0 +1,6 @@
+framework module Pods_ddm_mobileApp {
+  umbrella header "Pods-ddm-mobileApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

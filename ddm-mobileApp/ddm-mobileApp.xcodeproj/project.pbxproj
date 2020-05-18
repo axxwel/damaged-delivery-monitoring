@@ -3,23 +3,39 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18D839B5A5C8E743C8C9DC43 /* Pods_ddm_mobileApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 508788708A9E83A5A38D5C6F /* Pods_ddm_mobileApp.framework */; };
+		E314C6DB246EBEA2003F9F86 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314C6DA246EBEA2003F9F86 /* WelcomeViewController.swift */; };
+		E314C6DD246EC327003F9F86 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314C6DC246EC327003F9F86 /* FormViewController.swift */; };
+		E314C6DF246EC343003F9F86 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314C6DE246EC343003F9F86 /* SuccessViewController.swift */; };
+		E314C6E1246FE26B003F9F86 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314C6E0246FE26B003F9F86 /* GraphViewController.swift */; };
+		E314C6E3246FE312003F9F86 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314C6E2246FE312003F9F86 /* ConnectViewController.swift */; };
+		E314C6E724711AED003F9F86 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314C6E624711AED003F9F86 /* API.swift */; };
+		E3384B9624725DFA0092C630 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = E3384B9524725DFA0092C630 /* awsconfiguration.json */; };
 		E3434F93246D399F00592BC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3434F92246D399F00592BC8 /* AppDelegate.swift */; };
 		E3434F95246D399F00592BC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3434F94246D399F00592BC8 /* SceneDelegate.swift */; };
-		E3434F97246D399F00592BC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3434F96246D399F00592BC8 /* ViewController.swift */; };
 		E3434F9A246D399F00592BC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3434F98246D399F00592BC8 /* Main.storyboard */; };
 		E3434F9C246D39A200592BC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3434F9B246D39A200592BC8 /* Assets.xcassets */; };
 		E3434F9F246D39A200592BC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3434F9D246D39A200592BC8 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		508788708A9E83A5A38D5C6F /* Pods_ddm_mobileApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ddm_mobileApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8731190ABFA47D56761C0C10 /* Pods-ddm-mobileApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ddm-mobileApp.debug.xcconfig"; path = "Target Support Files/Pods-ddm-mobileApp/Pods-ddm-mobileApp.debug.xcconfig"; sourceTree = "<group>"; };
+		CD2D409CD1E10F88A6335041 /* Pods-ddm-mobileApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ddm-mobileApp.release.xcconfig"; path = "Target Support Files/Pods-ddm-mobileApp/Pods-ddm-mobileApp.release.xcconfig"; sourceTree = "<group>"; };
+		E314C6DA246EBEA2003F9F86 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		E314C6DC246EC327003F9F86 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		E314C6DE246EC343003F9F86 /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
+		E314C6E0246FE26B003F9F86 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		E314C6E2246FE312003F9F86 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
+		E314C6E624711AED003F9F86 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = SOURCE_ROOT; };
+		E3384B9524725DFA0092C630 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		E3434F8F246D399F00592BC8 /* ddm-mobileApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ddm-mobileApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3434F92246D399F00592BC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3434F94246D399F00592BC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E3434F96246D399F00592BC8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E3434F99246D399F00592BC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E3434F9B246D39A200592BC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3434F9E246D39A200592BC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -31,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D839B5A5C8E743C8C9DC43 /* Pods_ddm_mobileApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1EC346DC02263A3D206634AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				508788708A9E83A5A38D5C6F /* Pods_ddm_mobileApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3C7B02EF92100EEED8EC5123 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8731190ABFA47D56761C0C10 /* Pods-ddm-mobileApp.debug.xcconfig */,
+				CD2D409CD1E10F88A6335041 /* Pods-ddm-mobileApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E3434F86246D399F00592BC8 = {
 			isa = PBXGroup;
 			children = (
 				E3434F91246D399F00592BC8 /* ddm-mobileApp */,
 				E3434F90246D399F00592BC8 /* Products */,
+				3C7B02EF92100EEED8EC5123 /* Pods */,
+				1EC346DC02263A3D206634AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,13 +92,19 @@
 		E3434F91246D399F00592BC8 /* ddm-mobileApp */ = {
 			isa = PBXGroup;
 			children = (
+				E3384B9524725DFA0092C630 /* awsconfiguration.json */,
+				E314C6E624711AED003F9F86 /* API.swift */,
 				E3434F92246D399F00592BC8 /* AppDelegate.swift */,
 				E3434F94246D399F00592BC8 /* SceneDelegate.swift */,
-				E3434F96246D399F00592BC8 /* ViewController.swift */,
+				E314C6DA246EBEA2003F9F86 /* WelcomeViewController.swift */,
+				E314C6DC246EC327003F9F86 /* FormViewController.swift */,
 				E3434F98246D399F00592BC8 /* Main.storyboard */,
 				E3434F9B246D39A200592BC8 /* Assets.xcassets */,
 				E3434F9D246D39A200592BC8 /* LaunchScreen.storyboard */,
 				E3434FA0246D39A200592BC8 /* Info.plist */,
+				E314C6DE246EC343003F9F86 /* SuccessViewController.swift */,
+				E314C6E0246FE26B003F9F86 /* GraphViewController.swift */,
+				E314C6E2246FE312003F9F86 /* ConnectViewController.swift */,
 			);
 			path = "ddm-mobileApp";
 			sourceTree = "<group>";
@@ -74,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3434FA3246D39A200592BC8 /* Build configuration list for PBXNativeTarget "ddm-mobileApp" */;
 			buildPhases = (
+				64616CFC75710328DA28171E /* [CP] Check Pods Manifest.lock */,
 				E3434F8B246D399F00592BC8 /* Sources */,
 				E3434F8C246D399F00592BC8 /* Frameworks */,
 				E3434F8D246D399F00592BC8 /* Resources */,
+				11B7060A26D7C7ABA4778645 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,6 +169,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3384B9624725DFA0092C630 /* awsconfiguration.json in Resources */,
 				E3434F9F246D39A200592BC8 /* LaunchScreen.storyboard in Resources */,
 				E3434F9C246D39A200592BC8 /* Assets.xcassets in Resources */,
 				E3434F9A246D399F00592BC8 /* Main.storyboard in Resources */,
@@ -133,13 +178,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		11B7060A26D7C7ABA4778645 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ddm-mobileApp/Pods-ddm-mobileApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ddm-mobileApp/Pods-ddm-mobileApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ddm-mobileApp/Pods-ddm-mobileApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64616CFC75710328DA28171E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ddm-mobileApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E3434F8B246D399F00592BC8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3434F97246D399F00592BC8 /* ViewController.swift in Sources */,
+				E314C6E3246FE312003F9F86 /* ConnectViewController.swift in Sources */,
+				E314C6DB246EBEA2003F9F86 /* WelcomeViewController.swift in Sources */,
 				E3434F93246D399F00592BC8 /* AppDelegate.swift in Sources */,
+				E314C6DD246EC327003F9F86 /* FormViewController.swift in Sources */,
+				E314C6E1246FE26B003F9F86 /* GraphViewController.swift in Sources */,
+				E314C6DF246EC343003F9F86 /* SuccessViewController.swift in Sources */,
+				E314C6E724711AED003F9F86 /* API.swift in Sources */,
 				E3434F95246D399F00592BC8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,9 +374,11 @@
 		};
 		E3434FA4246D39A200592BC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8731190ABFA47D56761C0C10 /* Pods-ddm-mobileApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6HN89VPPTW;
 				INFOPLIST_FILE = "ddm-mobileApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -299,9 +393,11 @@
 		};
 		E3434FA5246D39A200592BC8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD2D409CD1E10F88A6335041 /* Pods-ddm-mobileApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6HN89VPPTW;
 				INFOPLIST_FILE = "ddm-mobileApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
