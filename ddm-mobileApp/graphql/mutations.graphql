@@ -7,6 +7,13 @@ mutation CreateTodo(
     id
     name
     description
+    mpuTransX
+    mpuTransY
+    mpuTransZ
+    mpuRotX
+    mpuRotY
+    mpuRotZ
+    mpuTemp
     createdAt
     updatedAt
   }
@@ -19,6 +26,13 @@ mutation UpdateTodo(
     id
     name
     description
+    mpuTransX
+    mpuTransY
+    mpuTransZ
+    mpuRotX
+    mpuRotY
+    mpuRotZ
+    mpuTemp
     createdAt
     updatedAt
   }
@@ -31,6 +45,13 @@ mutation DeleteTodo(
     id
     name
     description
+    mpuTransX
+    mpuTransY
+    mpuTransZ
+    mpuRotX
+    mpuRotY
+    mpuRotZ
+    mpuTemp
     createdAt
     updatedAt
   }

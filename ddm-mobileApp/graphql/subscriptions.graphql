@@ -4,6 +4,13 @@ subscription OnCreateTodo {
     id
     name
     description
+    mpuTransX
+    mpuTransY
+    mpuTransZ
+    mpuRotX
+    mpuRotY
+    mpuRotZ
+    mpuTemp
     createdAt
     updatedAt
   }
@@ -13,6 +20,13 @@ subscription OnUpdateTodo {
     id
     name
     description
+    mpuTransX
+    mpuTransY
+    mpuTransZ
+    mpuRotX
+    mpuRotY
+    mpuRotZ
+    mpuTemp
     createdAt
     updatedAt
   }
@@ -22,6 +36,13 @@ subscription OnDeleteTodo {
     id
     name
     description
+    mpuTransX
+    mpuTransY
+    mpuTransZ
+    mpuRotX
+    mpuRotY
+    mpuRotZ
+    mpuTemp
     createdAt
     updatedAt
   }

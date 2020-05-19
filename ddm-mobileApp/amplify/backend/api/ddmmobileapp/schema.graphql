@@ -2,4 +2,11 @@ type Todo @model {
   id: ID!
   name: String!
   description: String
+  mpuTransX: Int
+  mpuTransY: Int
+  mpuTransZ: Int
+  mpuRotX: Int
+  mpuRotY: Int
+  mpuRotZ: Int
+  mpuTemp: Int
 }

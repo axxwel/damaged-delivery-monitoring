@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		18D839B5A5C8E743C8C9DC43 /* Pods_ddm_mobileApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 508788708A9E83A5A38D5C6F /* Pods_ddm_mobileApp.framework */; };
-		E314C6DB246EBEA2003F9F86 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314C6DA246EBEA2003F9F86 /* WelcomeViewController.swift */; };
-		E314C6DD246EC327003F9F86 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314C6DC246EC327003F9F86 /* FormViewController.swift */; };
-		E314C6DF246EC343003F9F86 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314C6DE246EC343003F9F86 /* SuccessViewController.swift */; };
 		E314C6E1246FE26B003F9F86 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314C6E0246FE26B003F9F86 /* GraphViewController.swift */; };
 		E314C6E3246FE312003F9F86 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314C6E2246FE312003F9F86 /* ConnectViewController.swift */; };
 		E314C6E724711AED003F9F86 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314C6E624711AED003F9F86 /* API.swift */; };
@@ -20,15 +17,14 @@
 		E3434F9A246D399F00592BC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3434F98246D399F00592BC8 /* Main.storyboard */; };
 		E3434F9C246D39A200592BC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3434F9B246D39A200592BC8 /* Assets.xcassets */; };
 		E3434F9F246D39A200592BC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3434F9D246D39A200592BC8 /* LaunchScreen.storyboard */; };
+		E3BF188B2474264B0078659C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF188A2474264B0078659C /* TabBarController.swift */; };
+		E3BF188D2474303B0078659C /* UUIDKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF188C2474303B0078659C /* UUIDKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		508788708A9E83A5A38D5C6F /* Pods_ddm_mobileApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ddm_mobileApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8731190ABFA47D56761C0C10 /* Pods-ddm-mobileApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ddm-mobileApp.debug.xcconfig"; path = "Target Support Files/Pods-ddm-mobileApp/Pods-ddm-mobileApp.debug.xcconfig"; sourceTree = "<group>"; };
 		CD2D409CD1E10F88A6335041 /* Pods-ddm-mobileApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ddm-mobileApp.release.xcconfig"; path = "Target Support Files/Pods-ddm-mobileApp/Pods-ddm-mobileApp.release.xcconfig"; sourceTree = "<group>"; };
-		E314C6DA246EBEA2003F9F86 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		E314C6DC246EC327003F9F86 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
-		E314C6DE246EC343003F9F86 /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
 		E314C6E0246FE26B003F9F86 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		E314C6E2246FE312003F9F86 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		E314C6E624711AED003F9F86 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = SOURCE_ROOT; };
@@ -40,6 +36,8 @@
 		E3434F9B246D39A200592BC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3434F9E246D39A200592BC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3434FA0246D39A200592BC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3BF188A2474264B0078659C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		E3BF188C2474303B0078659C /* UUIDKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUIDKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,17 +92,16 @@
 			children = (
 				E3384B9524725DFA0092C630 /* awsconfiguration.json */,
 				E314C6E624711AED003F9F86 /* API.swift */,
-				E3434F92246D399F00592BC8 /* AppDelegate.swift */,
 				E3434F94246D399F00592BC8 /* SceneDelegate.swift */,
-				E314C6DA246EBEA2003F9F86 /* WelcomeViewController.swift */,
-				E314C6DC246EC327003F9F86 /* FormViewController.swift */,
+				E3434F92246D399F00592BC8 /* AppDelegate.swift */,
 				E3434F98246D399F00592BC8 /* Main.storyboard */,
+				E3BF188A2474264B0078659C /* TabBarController.swift */,
+				E314C6E0246FE26B003F9F86 /* GraphViewController.swift */,
+				E314C6E2246FE312003F9F86 /* ConnectViewController.swift */,
 				E3434F9B246D39A200592BC8 /* Assets.xcassets */,
 				E3434F9D246D39A200592BC8 /* LaunchScreen.storyboard */,
 				E3434FA0246D39A200592BC8 /* Info.plist */,
-				E314C6DE246EC343003F9F86 /* SuccessViewController.swift */,
-				E314C6E0246FE26B003F9F86 /* GraphViewController.swift */,
-				E314C6E2246FE312003F9F86 /* ConnectViewController.swift */,
+				E3BF188C2474303B0078659C /* UUIDKey.swift */,
 			);
 			path = "ddm-mobileApp";
 			sourceTree = "<group>";
@@ -225,12 +222,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3BF188D2474303B0078659C /* UUIDKey.swift in Sources */,
 				E314C6E3246FE312003F9F86 /* ConnectViewController.swift in Sources */,
-				E314C6DB246EBEA2003F9F86 /* WelcomeViewController.swift in Sources */,
 				E3434F93246D399F00592BC8 /* AppDelegate.swift in Sources */,
-				E314C6DD246EC327003F9F86 /* FormViewController.swift in Sources */,
 				E314C6E1246FE26B003F9F86 /* GraphViewController.swift in Sources */,
-				E314C6DF246EC343003F9F86 /* SuccessViewController.swift in Sources */,
+				E3BF188B2474264B0078659C /* TabBarController.swift in Sources */,
 				E314C6E724711AED003F9F86 /* API.swift in Sources */,
 				E3434F95246D399F00592BC8 /* SceneDelegate.swift in Sources */,
 			);

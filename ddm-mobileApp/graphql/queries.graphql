@@ -4,6 +4,13 @@ query GetTodo($id: ID!) {
     id
     name
     description
+    mpuTransX
+    mpuTransY
+    mpuTransZ
+    mpuRotX
+    mpuRotY
+    mpuRotZ
+    mpuTemp
     createdAt
     updatedAt
   }
@@ -18,6 +25,13 @@ query ListTodos(
       id
       name
       description
+      mpuTransX
+      mpuTransY
+      mpuTransZ
+      mpuRotX
+      mpuRotY
+      mpuRotZ
+      mpuTemp
       createdAt
       updatedAt
     }

@@ -5,8 +5,8 @@ import AWSAppSync
 public struct CreateTodoInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: GraphQLID? = nil, name: String, description: String? = nil) {
-    graphQLMap = ["id": id, "name": name, "description": description]
+  public init(id: GraphQLID? = nil, name: String, description: String? = nil, mpuTransX: Int? = nil, mpuTransY: Int? = nil, mpuTransZ: Int? = nil, mpuRotX: Int? = nil, mpuRotY: Int? = nil, mpuRotZ: Int? = nil, mpuTemp: Int? = nil) {
+    graphQLMap = ["id": id, "name": name, "description": description, "mpuTransX": mpuTransX, "mpuTransY": mpuTransY, "mpuTransZ": mpuTransZ, "mpuRotX": mpuRotX, "mpuRotY": mpuRotY, "mpuRotZ": mpuRotZ, "mpuTemp": mpuTemp]
   }
 
   public var id: GraphQLID? {
@@ -35,13 +35,76 @@ public struct CreateTodoInput: GraphQLMapConvertible {
       graphQLMap.updateValue(newValue, forKey: "description")
     }
   }
+
+  public var mpuTransX: Int? {
+    get {
+      return graphQLMap["mpuTransX"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuTransX")
+    }
+  }
+
+  public var mpuTransY: Int? {
+    get {
+      return graphQLMap["mpuTransY"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuTransY")
+    }
+  }
+
+  public var mpuTransZ: Int? {
+    get {
+      return graphQLMap["mpuTransZ"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuTransZ")
+    }
+  }
+
+  public var mpuRotX: Int? {
+    get {
+      return graphQLMap["mpuRotX"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuRotX")
+    }
+  }
+
+  public var mpuRotY: Int? {
+    get {
+      return graphQLMap["mpuRotY"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuRotY")
+    }
+  }
+
+  public var mpuRotZ: Int? {
+    get {
+      return graphQLMap["mpuRotZ"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuRotZ")
+    }
+  }
+
+  public var mpuTemp: Int? {
+    get {
+      return graphQLMap["mpuTemp"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuTemp")
+    }
+  }
 }
 
 public struct ModelTodoConditionInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(name: ModelStringInput? = nil, description: ModelStringInput? = nil, and: [ModelTodoConditionInput?]? = nil, or: [ModelTodoConditionInput?]? = nil, not: ModelTodoConditionInput? = nil) {
-    graphQLMap = ["name": name, "description": description, "and": and, "or": or, "not": not]
+  public init(name: ModelStringInput? = nil, description: ModelStringInput? = nil, mpuTransX: ModelIntInput? = nil, mpuTransY: ModelIntInput? = nil, mpuTransZ: ModelIntInput? = nil, mpuRotX: ModelIntInput? = nil, mpuRotY: ModelIntInput? = nil, mpuRotZ: ModelIntInput? = nil, mpuTemp: ModelIntInput? = nil, and: [ModelTodoConditionInput?]? = nil, or: [ModelTodoConditionInput?]? = nil, not: ModelTodoConditionInput? = nil) {
+    graphQLMap = ["name": name, "description": description, "mpuTransX": mpuTransX, "mpuTransY": mpuTransY, "mpuTransZ": mpuTransZ, "mpuRotX": mpuRotX, "mpuRotY": mpuRotY, "mpuRotZ": mpuRotZ, "mpuTemp": mpuTemp, "and": and, "or": or, "not": not]
   }
 
   public var name: ModelStringInput? {
@@ -59,6 +122,69 @@ public struct ModelTodoConditionInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "description")
+    }
+  }
+
+  public var mpuTransX: ModelIntInput? {
+    get {
+      return graphQLMap["mpuTransX"] as! ModelIntInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuTransX")
+    }
+  }
+
+  public var mpuTransY: ModelIntInput? {
+    get {
+      return graphQLMap["mpuTransY"] as! ModelIntInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuTransY")
+    }
+  }
+
+  public var mpuTransZ: ModelIntInput? {
+    get {
+      return graphQLMap["mpuTransZ"] as! ModelIntInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuTransZ")
+    }
+  }
+
+  public var mpuRotX: ModelIntInput? {
+    get {
+      return graphQLMap["mpuRotX"] as! ModelIntInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuRotX")
+    }
+  }
+
+  public var mpuRotY: ModelIntInput? {
+    get {
+      return graphQLMap["mpuRotY"] as! ModelIntInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuRotY")
+    }
+  }
+
+  public var mpuRotZ: ModelIntInput? {
+    get {
+      return graphQLMap["mpuRotZ"] as! ModelIntInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuRotZ")
+    }
+  }
+
+  public var mpuTemp: ModelIntInput? {
+    get {
+      return graphQLMap["mpuTemp"] as! ModelIntInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuTemp")
     }
   }
 
@@ -351,11 +477,100 @@ public struct ModelSizeInput: GraphQLMapConvertible {
   }
 }
 
+public struct ModelIntInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(ne: Int? = nil, eq: Int? = nil, le: Int? = nil, lt: Int? = nil, ge: Int? = nil, gt: Int? = nil, between: [Int?]? = nil, attributeExists: Bool? = nil, attributeType: ModelAttributeTypes? = nil) {
+    graphQLMap = ["ne": ne, "eq": eq, "le": le, "lt": lt, "ge": ge, "gt": gt, "between": between, "attributeExists": attributeExists, "attributeType": attributeType]
+  }
+
+  public var ne: Int? {
+    get {
+      return graphQLMap["ne"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "ne")
+    }
+  }
+
+  public var eq: Int? {
+    get {
+      return graphQLMap["eq"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "eq")
+    }
+  }
+
+  public var le: Int? {
+    get {
+      return graphQLMap["le"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "le")
+    }
+  }
+
+  public var lt: Int? {
+    get {
+      return graphQLMap["lt"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "lt")
+    }
+  }
+
+  public var ge: Int? {
+    get {
+      return graphQLMap["ge"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "ge")
+    }
+  }
+
+  public var gt: Int? {
+    get {
+      return graphQLMap["gt"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "gt")
+    }
+  }
+
+  public var between: [Int?]? {
+    get {
+      return graphQLMap["between"] as! [Int?]?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "between")
+    }
+  }
+
+  public var attributeExists: Bool? {
+    get {
+      return graphQLMap["attributeExists"] as! Bool?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "attributeExists")
+    }
+  }
+
+  public var attributeType: ModelAttributeTypes? {
+    get {
+      return graphQLMap["attributeType"] as! ModelAttributeTypes?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "attributeType")
+    }
+  }
+}
+
 public struct UpdateTodoInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: GraphQLID, name: String? = nil, description: String? = nil) {
-    graphQLMap = ["id": id, "name": name, "description": description]
+  public init(id: GraphQLID, name: String? = nil, description: String? = nil, mpuTransX: Int? = nil, mpuTransY: Int? = nil, mpuTransZ: Int? = nil, mpuRotX: Int? = nil, mpuRotY: Int? = nil, mpuRotZ: Int? = nil, mpuTemp: Int? = nil) {
+    graphQLMap = ["id": id, "name": name, "description": description, "mpuTransX": mpuTransX, "mpuTransY": mpuTransY, "mpuTransZ": mpuTransZ, "mpuRotX": mpuRotX, "mpuRotY": mpuRotY, "mpuRotZ": mpuRotZ, "mpuTemp": mpuTemp]
   }
 
   public var id: GraphQLID {
@@ -384,6 +599,69 @@ public struct UpdateTodoInput: GraphQLMapConvertible {
       graphQLMap.updateValue(newValue, forKey: "description")
     }
   }
+
+  public var mpuTransX: Int? {
+    get {
+      return graphQLMap["mpuTransX"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuTransX")
+    }
+  }
+
+  public var mpuTransY: Int? {
+    get {
+      return graphQLMap["mpuTransY"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuTransY")
+    }
+  }
+
+  public var mpuTransZ: Int? {
+    get {
+      return graphQLMap["mpuTransZ"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuTransZ")
+    }
+  }
+
+  public var mpuRotX: Int? {
+    get {
+      return graphQLMap["mpuRotX"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuRotX")
+    }
+  }
+
+  public var mpuRotY: Int? {
+    get {
+      return graphQLMap["mpuRotY"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuRotY")
+    }
+  }
+
+  public var mpuRotZ: Int? {
+    get {
+      return graphQLMap["mpuRotZ"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuRotZ")
+    }
+  }
+
+  public var mpuTemp: Int? {
+    get {
+      return graphQLMap["mpuTemp"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuTemp")
+    }
+  }
 }
 
 public struct DeleteTodoInput: GraphQLMapConvertible {
@@ -406,8 +684,8 @@ public struct DeleteTodoInput: GraphQLMapConvertible {
 public struct ModelTodoFilterInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: ModelIDInput? = nil, name: ModelStringInput? = nil, description: ModelStringInput? = nil, and: [ModelTodoFilterInput?]? = nil, or: [ModelTodoFilterInput?]? = nil, not: ModelTodoFilterInput? = nil) {
-    graphQLMap = ["id": id, "name": name, "description": description, "and": and, "or": or, "not": not]
+  public init(id: ModelIDInput? = nil, name: ModelStringInput? = nil, description: ModelStringInput? = nil, mpuTransX: ModelIntInput? = nil, mpuTransY: ModelIntInput? = nil, mpuTransZ: ModelIntInput? = nil, mpuRotX: ModelIntInput? = nil, mpuRotY: ModelIntInput? = nil, mpuRotZ: ModelIntInput? = nil, mpuTemp: ModelIntInput? = nil, and: [ModelTodoFilterInput?]? = nil, or: [ModelTodoFilterInput?]? = nil, not: ModelTodoFilterInput? = nil) {
+    graphQLMap = ["id": id, "name": name, "description": description, "mpuTransX": mpuTransX, "mpuTransY": mpuTransY, "mpuTransZ": mpuTransZ, "mpuRotX": mpuRotX, "mpuRotY": mpuRotY, "mpuRotZ": mpuRotZ, "mpuTemp": mpuTemp, "and": and, "or": or, "not": not]
   }
 
   public var id: ModelIDInput? {
@@ -434,6 +712,69 @@ public struct ModelTodoFilterInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "description")
+    }
+  }
+
+  public var mpuTransX: ModelIntInput? {
+    get {
+      return graphQLMap["mpuTransX"] as! ModelIntInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuTransX")
+    }
+  }
+
+  public var mpuTransY: ModelIntInput? {
+    get {
+      return graphQLMap["mpuTransY"] as! ModelIntInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuTransY")
+    }
+  }
+
+  public var mpuTransZ: ModelIntInput? {
+    get {
+      return graphQLMap["mpuTransZ"] as! ModelIntInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuTransZ")
+    }
+  }
+
+  public var mpuRotX: ModelIntInput? {
+    get {
+      return graphQLMap["mpuRotX"] as! ModelIntInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuRotX")
+    }
+  }
+
+  public var mpuRotY: ModelIntInput? {
+    get {
+      return graphQLMap["mpuRotY"] as! ModelIntInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuRotY")
+    }
+  }
+
+  public var mpuRotZ: ModelIntInput? {
+    get {
+      return graphQLMap["mpuRotZ"] as! ModelIntInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuRotZ")
+    }
+  }
+
+  public var mpuTemp: ModelIntInput? {
+    get {
+      return graphQLMap["mpuTemp"] as! ModelIntInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mpuTemp")
     }
   }
 
@@ -592,7 +933,7 @@ public struct ModelIDInput: GraphQLMapConvertible {
 
 public final class CreateTodoMutation: GraphQLMutation {
   public static let operationString =
-    "mutation CreateTodo($input: CreateTodoInput!, $condition: ModelTodoConditionInput) {\n  createTodo(input: $input, condition: $condition) {\n    __typename\n    id\n    name\n    description\n    createdAt\n    updatedAt\n  }\n}"
+    "mutation CreateTodo($input: CreateTodoInput!, $condition: ModelTodoConditionInput) {\n  createTodo(input: $input, condition: $condition) {\n    __typename\n    id\n    name\n    description\n    mpuTransX\n    mpuTransY\n    mpuTransZ\n    mpuRotX\n    mpuRotY\n    mpuRotZ\n    mpuTemp\n    createdAt\n    updatedAt\n  }\n}"
 
   public var input: CreateTodoInput
   public var condition: ModelTodoConditionInput?
@@ -640,6 +981,13 @@ public final class CreateTodoMutation: GraphQLMutation {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("name", type: .nonNull(.scalar(String.self))),
         GraphQLField("description", type: .scalar(String.self)),
+        GraphQLField("mpuTransX", type: .scalar(Int.self)),
+        GraphQLField("mpuTransY", type: .scalar(Int.self)),
+        GraphQLField("mpuTransZ", type: .scalar(Int.self)),
+        GraphQLField("mpuRotX", type: .scalar(Int.self)),
+        GraphQLField("mpuRotY", type: .scalar(Int.self)),
+        GraphQLField("mpuRotZ", type: .scalar(Int.self)),
+        GraphQLField("mpuTemp", type: .scalar(Int.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -650,8 +998,8 @@ public final class CreateTodoMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, name: String, description: String? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Todo", "id": id, "name": name, "description": description, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, name: String, description: String? = nil, mpuTransX: Int? = nil, mpuTransY: Int? = nil, mpuTransZ: Int? = nil, mpuRotX: Int? = nil, mpuRotY: Int? = nil, mpuRotZ: Int? = nil, mpuTemp: Int? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Todo", "id": id, "name": name, "description": description, "mpuTransX": mpuTransX, "mpuTransY": mpuTransY, "mpuTransZ": mpuTransZ, "mpuRotX": mpuRotX, "mpuRotY": mpuRotY, "mpuRotZ": mpuRotZ, "mpuTemp": mpuTemp, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -690,6 +1038,69 @@ public final class CreateTodoMutation: GraphQLMutation {
         }
       }
 
+      public var mpuTransX: Int? {
+        get {
+          return snapshot["mpuTransX"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTransX")
+        }
+      }
+
+      public var mpuTransY: Int? {
+        get {
+          return snapshot["mpuTransY"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTransY")
+        }
+      }
+
+      public var mpuTransZ: Int? {
+        get {
+          return snapshot["mpuTransZ"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTransZ")
+        }
+      }
+
+      public var mpuRotX: Int? {
+        get {
+          return snapshot["mpuRotX"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuRotX")
+        }
+      }
+
+      public var mpuRotY: Int? {
+        get {
+          return snapshot["mpuRotY"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuRotY")
+        }
+      }
+
+      public var mpuRotZ: Int? {
+        get {
+          return snapshot["mpuRotZ"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuRotZ")
+        }
+      }
+
+      public var mpuTemp: Int? {
+        get {
+          return snapshot["mpuTemp"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTemp")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -713,7 +1124,7 @@ public final class CreateTodoMutation: GraphQLMutation {
 
 public final class UpdateTodoMutation: GraphQLMutation {
   public static let operationString =
-    "mutation UpdateTodo($input: UpdateTodoInput!, $condition: ModelTodoConditionInput) {\n  updateTodo(input: $input, condition: $condition) {\n    __typename\n    id\n    name\n    description\n    createdAt\n    updatedAt\n  }\n}"
+    "mutation UpdateTodo($input: UpdateTodoInput!, $condition: ModelTodoConditionInput) {\n  updateTodo(input: $input, condition: $condition) {\n    __typename\n    id\n    name\n    description\n    mpuTransX\n    mpuTransY\n    mpuTransZ\n    mpuRotX\n    mpuRotY\n    mpuRotZ\n    mpuTemp\n    createdAt\n    updatedAt\n  }\n}"
 
   public var input: UpdateTodoInput
   public var condition: ModelTodoConditionInput?
@@ -761,6 +1172,13 @@ public final class UpdateTodoMutation: GraphQLMutation {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("name", type: .nonNull(.scalar(String.self))),
         GraphQLField("description", type: .scalar(String.self)),
+        GraphQLField("mpuTransX", type: .scalar(Int.self)),
+        GraphQLField("mpuTransY", type: .scalar(Int.self)),
+        GraphQLField("mpuTransZ", type: .scalar(Int.self)),
+        GraphQLField("mpuRotX", type: .scalar(Int.self)),
+        GraphQLField("mpuRotY", type: .scalar(Int.self)),
+        GraphQLField("mpuRotZ", type: .scalar(Int.self)),
+        GraphQLField("mpuTemp", type: .scalar(Int.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -771,8 +1189,8 @@ public final class UpdateTodoMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, name: String, description: String? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Todo", "id": id, "name": name, "description": description, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, name: String, description: String? = nil, mpuTransX: Int? = nil, mpuTransY: Int? = nil, mpuTransZ: Int? = nil, mpuRotX: Int? = nil, mpuRotY: Int? = nil, mpuRotZ: Int? = nil, mpuTemp: Int? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Todo", "id": id, "name": name, "description": description, "mpuTransX": mpuTransX, "mpuTransY": mpuTransY, "mpuTransZ": mpuTransZ, "mpuRotX": mpuRotX, "mpuRotY": mpuRotY, "mpuRotZ": mpuRotZ, "mpuTemp": mpuTemp, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -811,6 +1229,69 @@ public final class UpdateTodoMutation: GraphQLMutation {
         }
       }
 
+      public var mpuTransX: Int? {
+        get {
+          return snapshot["mpuTransX"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTransX")
+        }
+      }
+
+      public var mpuTransY: Int? {
+        get {
+          return snapshot["mpuTransY"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTransY")
+        }
+      }
+
+      public var mpuTransZ: Int? {
+        get {
+          return snapshot["mpuTransZ"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTransZ")
+        }
+      }
+
+      public var mpuRotX: Int? {
+        get {
+          return snapshot["mpuRotX"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuRotX")
+        }
+      }
+
+      public var mpuRotY: Int? {
+        get {
+          return snapshot["mpuRotY"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuRotY")
+        }
+      }
+
+      public var mpuRotZ: Int? {
+        get {
+          return snapshot["mpuRotZ"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuRotZ")
+        }
+      }
+
+      public var mpuTemp: Int? {
+        get {
+          return snapshot["mpuTemp"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTemp")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -834,7 +1315,7 @@ public final class UpdateTodoMutation: GraphQLMutation {
 
 public final class DeleteTodoMutation: GraphQLMutation {
   public static let operationString =
-    "mutation DeleteTodo($input: DeleteTodoInput!, $condition: ModelTodoConditionInput) {\n  deleteTodo(input: $input, condition: $condition) {\n    __typename\n    id\n    name\n    description\n    createdAt\n    updatedAt\n  }\n}"
+    "mutation DeleteTodo($input: DeleteTodoInput!, $condition: ModelTodoConditionInput) {\n  deleteTodo(input: $input, condition: $condition) {\n    __typename\n    id\n    name\n    description\n    mpuTransX\n    mpuTransY\n    mpuTransZ\n    mpuRotX\n    mpuRotY\n    mpuRotZ\n    mpuTemp\n    createdAt\n    updatedAt\n  }\n}"
 
   public var input: DeleteTodoInput
   public var condition: ModelTodoConditionInput?
@@ -882,6 +1363,13 @@ public final class DeleteTodoMutation: GraphQLMutation {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("name", type: .nonNull(.scalar(String.self))),
         GraphQLField("description", type: .scalar(String.self)),
+        GraphQLField("mpuTransX", type: .scalar(Int.self)),
+        GraphQLField("mpuTransY", type: .scalar(Int.self)),
+        GraphQLField("mpuTransZ", type: .scalar(Int.self)),
+        GraphQLField("mpuRotX", type: .scalar(Int.self)),
+        GraphQLField("mpuRotY", type: .scalar(Int.self)),
+        GraphQLField("mpuRotZ", type: .scalar(Int.self)),
+        GraphQLField("mpuTemp", type: .scalar(Int.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -892,8 +1380,8 @@ public final class DeleteTodoMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, name: String, description: String? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Todo", "id": id, "name": name, "description": description, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, name: String, description: String? = nil, mpuTransX: Int? = nil, mpuTransY: Int? = nil, mpuTransZ: Int? = nil, mpuRotX: Int? = nil, mpuRotY: Int? = nil, mpuRotZ: Int? = nil, mpuTemp: Int? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Todo", "id": id, "name": name, "description": description, "mpuTransX": mpuTransX, "mpuTransY": mpuTransY, "mpuTransZ": mpuTransZ, "mpuRotX": mpuRotX, "mpuRotY": mpuRotY, "mpuRotZ": mpuRotZ, "mpuTemp": mpuTemp, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -932,6 +1420,69 @@ public final class DeleteTodoMutation: GraphQLMutation {
         }
       }
 
+      public var mpuTransX: Int? {
+        get {
+          return snapshot["mpuTransX"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTransX")
+        }
+      }
+
+      public var mpuTransY: Int? {
+        get {
+          return snapshot["mpuTransY"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTransY")
+        }
+      }
+
+      public var mpuTransZ: Int? {
+        get {
+          return snapshot["mpuTransZ"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTransZ")
+        }
+      }
+
+      public var mpuRotX: Int? {
+        get {
+          return snapshot["mpuRotX"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuRotX")
+        }
+      }
+
+      public var mpuRotY: Int? {
+        get {
+          return snapshot["mpuRotY"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuRotY")
+        }
+      }
+
+      public var mpuRotZ: Int? {
+        get {
+          return snapshot["mpuRotZ"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuRotZ")
+        }
+      }
+
+      public var mpuTemp: Int? {
+        get {
+          return snapshot["mpuTemp"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTemp")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -955,7 +1506,7 @@ public final class DeleteTodoMutation: GraphQLMutation {
 
 public final class GetTodoQuery: GraphQLQuery {
   public static let operationString =
-    "query GetTodo($id: ID!) {\n  getTodo(id: $id) {\n    __typename\n    id\n    name\n    description\n    createdAt\n    updatedAt\n  }\n}"
+    "query GetTodo($id: ID!) {\n  getTodo(id: $id) {\n    __typename\n    id\n    name\n    description\n    mpuTransX\n    mpuTransY\n    mpuTransZ\n    mpuRotX\n    mpuRotY\n    mpuRotZ\n    mpuTemp\n    createdAt\n    updatedAt\n  }\n}"
 
   public var id: GraphQLID
 
@@ -1001,6 +1552,13 @@ public final class GetTodoQuery: GraphQLQuery {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("name", type: .nonNull(.scalar(String.self))),
         GraphQLField("description", type: .scalar(String.self)),
+        GraphQLField("mpuTransX", type: .scalar(Int.self)),
+        GraphQLField("mpuTransY", type: .scalar(Int.self)),
+        GraphQLField("mpuTransZ", type: .scalar(Int.self)),
+        GraphQLField("mpuRotX", type: .scalar(Int.self)),
+        GraphQLField("mpuRotY", type: .scalar(Int.self)),
+        GraphQLField("mpuRotZ", type: .scalar(Int.self)),
+        GraphQLField("mpuTemp", type: .scalar(Int.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -1011,8 +1569,8 @@ public final class GetTodoQuery: GraphQLQuery {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, name: String, description: String? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Todo", "id": id, "name": name, "description": description, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, name: String, description: String? = nil, mpuTransX: Int? = nil, mpuTransY: Int? = nil, mpuTransZ: Int? = nil, mpuRotX: Int? = nil, mpuRotY: Int? = nil, mpuRotZ: Int? = nil, mpuTemp: Int? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Todo", "id": id, "name": name, "description": description, "mpuTransX": mpuTransX, "mpuTransY": mpuTransY, "mpuTransZ": mpuTransZ, "mpuRotX": mpuRotX, "mpuRotY": mpuRotY, "mpuRotZ": mpuRotZ, "mpuTemp": mpuTemp, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -1051,6 +1609,69 @@ public final class GetTodoQuery: GraphQLQuery {
         }
       }
 
+      public var mpuTransX: Int? {
+        get {
+          return snapshot["mpuTransX"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTransX")
+        }
+      }
+
+      public var mpuTransY: Int? {
+        get {
+          return snapshot["mpuTransY"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTransY")
+        }
+      }
+
+      public var mpuTransZ: Int? {
+        get {
+          return snapshot["mpuTransZ"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTransZ")
+        }
+      }
+
+      public var mpuRotX: Int? {
+        get {
+          return snapshot["mpuRotX"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuRotX")
+        }
+      }
+
+      public var mpuRotY: Int? {
+        get {
+          return snapshot["mpuRotY"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuRotY")
+        }
+      }
+
+      public var mpuRotZ: Int? {
+        get {
+          return snapshot["mpuRotZ"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuRotZ")
+        }
+      }
+
+      public var mpuTemp: Int? {
+        get {
+          return snapshot["mpuTemp"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTemp")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -1074,7 +1695,7 @@ public final class GetTodoQuery: GraphQLQuery {
 
 public final class ListTodosQuery: GraphQLQuery {
   public static let operationString =
-    "query ListTodos($filter: ModelTodoFilterInput, $limit: Int, $nextToken: String) {\n  listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {\n    __typename\n    items {\n      __typename\n      id\n      name\n      description\n      createdAt\n      updatedAt\n    }\n    nextToken\n  }\n}"
+    "query ListTodos($filter: ModelTodoFilterInput, $limit: Int, $nextToken: String) {\n  listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {\n    __typename\n    items {\n      __typename\n      id\n      name\n      description\n      mpuTransX\n      mpuTransY\n      mpuTransZ\n      mpuRotX\n      mpuRotY\n      mpuRotZ\n      mpuTemp\n      createdAt\n      updatedAt\n    }\n    nextToken\n  }\n}"
 
   public var filter: ModelTodoFilterInput?
   public var limit: Int?
@@ -1170,6 +1791,13 @@ public final class ListTodosQuery: GraphQLQuery {
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("name", type: .nonNull(.scalar(String.self))),
           GraphQLField("description", type: .scalar(String.self)),
+          GraphQLField("mpuTransX", type: .scalar(Int.self)),
+          GraphQLField("mpuTransY", type: .scalar(Int.self)),
+          GraphQLField("mpuTransZ", type: .scalar(Int.self)),
+          GraphQLField("mpuRotX", type: .scalar(Int.self)),
+          GraphQLField("mpuRotY", type: .scalar(Int.self)),
+          GraphQLField("mpuRotZ", type: .scalar(Int.self)),
+          GraphQLField("mpuTemp", type: .scalar(Int.self)),
           GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
         ]
@@ -1180,8 +1808,8 @@ public final class ListTodosQuery: GraphQLQuery {
           self.snapshot = snapshot
         }
 
-        public init(id: GraphQLID, name: String, description: String? = nil, createdAt: String, updatedAt: String) {
-          self.init(snapshot: ["__typename": "Todo", "id": id, "name": name, "description": description, "createdAt": createdAt, "updatedAt": updatedAt])
+        public init(id: GraphQLID, name: String, description: String? = nil, mpuTransX: Int? = nil, mpuTransY: Int? = nil, mpuTransZ: Int? = nil, mpuRotX: Int? = nil, mpuRotY: Int? = nil, mpuRotZ: Int? = nil, mpuTemp: Int? = nil, createdAt: String, updatedAt: String) {
+          self.init(snapshot: ["__typename": "Todo", "id": id, "name": name, "description": description, "mpuTransX": mpuTransX, "mpuTransY": mpuTransY, "mpuTransZ": mpuTransZ, "mpuRotX": mpuRotX, "mpuRotY": mpuRotY, "mpuRotZ": mpuRotZ, "mpuTemp": mpuTemp, "createdAt": createdAt, "updatedAt": updatedAt])
         }
 
         public var __typename: String {
@@ -1220,6 +1848,69 @@ public final class ListTodosQuery: GraphQLQuery {
           }
         }
 
+        public var mpuTransX: Int? {
+          get {
+            return snapshot["mpuTransX"] as? Int
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "mpuTransX")
+          }
+        }
+
+        public var mpuTransY: Int? {
+          get {
+            return snapshot["mpuTransY"] as? Int
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "mpuTransY")
+          }
+        }
+
+        public var mpuTransZ: Int? {
+          get {
+            return snapshot["mpuTransZ"] as? Int
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "mpuTransZ")
+          }
+        }
+
+        public var mpuRotX: Int? {
+          get {
+            return snapshot["mpuRotX"] as? Int
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "mpuRotX")
+          }
+        }
+
+        public var mpuRotY: Int? {
+          get {
+            return snapshot["mpuRotY"] as? Int
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "mpuRotY")
+          }
+        }
+
+        public var mpuRotZ: Int? {
+          get {
+            return snapshot["mpuRotZ"] as? Int
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "mpuRotZ")
+          }
+        }
+
+        public var mpuTemp: Int? {
+          get {
+            return snapshot["mpuTemp"] as? Int
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "mpuTemp")
+          }
+        }
+
         public var createdAt: String {
           get {
             return snapshot["createdAt"]! as! String
@@ -1244,7 +1935,7 @@ public final class ListTodosQuery: GraphQLQuery {
 
 public final class OnCreateTodoSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnCreateTodo {\n  onCreateTodo {\n    __typename\n    id\n    name\n    description\n    createdAt\n    updatedAt\n  }\n}"
+    "subscription OnCreateTodo {\n  onCreateTodo {\n    __typename\n    id\n    name\n    description\n    mpuTransX\n    mpuTransY\n    mpuTransZ\n    mpuRotX\n    mpuRotY\n    mpuRotZ\n    mpuTemp\n    createdAt\n    updatedAt\n  }\n}"
 
   public init() {
   }
@@ -1283,6 +1974,13 @@ public final class OnCreateTodoSubscription: GraphQLSubscription {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("name", type: .nonNull(.scalar(String.self))),
         GraphQLField("description", type: .scalar(String.self)),
+        GraphQLField("mpuTransX", type: .scalar(Int.self)),
+        GraphQLField("mpuTransY", type: .scalar(Int.self)),
+        GraphQLField("mpuTransZ", type: .scalar(Int.self)),
+        GraphQLField("mpuRotX", type: .scalar(Int.self)),
+        GraphQLField("mpuRotY", type: .scalar(Int.self)),
+        GraphQLField("mpuRotZ", type: .scalar(Int.self)),
+        GraphQLField("mpuTemp", type: .scalar(Int.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -1293,8 +1991,8 @@ public final class OnCreateTodoSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, name: String, description: String? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Todo", "id": id, "name": name, "description": description, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, name: String, description: String? = nil, mpuTransX: Int? = nil, mpuTransY: Int? = nil, mpuTransZ: Int? = nil, mpuRotX: Int? = nil, mpuRotY: Int? = nil, mpuRotZ: Int? = nil, mpuTemp: Int? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Todo", "id": id, "name": name, "description": description, "mpuTransX": mpuTransX, "mpuTransY": mpuTransY, "mpuTransZ": mpuTransZ, "mpuRotX": mpuRotX, "mpuRotY": mpuRotY, "mpuRotZ": mpuRotZ, "mpuTemp": mpuTemp, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -1333,6 +2031,69 @@ public final class OnCreateTodoSubscription: GraphQLSubscription {
         }
       }
 
+      public var mpuTransX: Int? {
+        get {
+          return snapshot["mpuTransX"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTransX")
+        }
+      }
+
+      public var mpuTransY: Int? {
+        get {
+          return snapshot["mpuTransY"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTransY")
+        }
+      }
+
+      public var mpuTransZ: Int? {
+        get {
+          return snapshot["mpuTransZ"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTransZ")
+        }
+      }
+
+      public var mpuRotX: Int? {
+        get {
+          return snapshot["mpuRotX"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuRotX")
+        }
+      }
+
+      public var mpuRotY: Int? {
+        get {
+          return snapshot["mpuRotY"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuRotY")
+        }
+      }
+
+      public var mpuRotZ: Int? {
+        get {
+          return snapshot["mpuRotZ"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuRotZ")
+        }
+      }
+
+      public var mpuTemp: Int? {
+        get {
+          return snapshot["mpuTemp"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTemp")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -1356,7 +2117,7 @@ public final class OnCreateTodoSubscription: GraphQLSubscription {
 
 public final class OnUpdateTodoSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnUpdateTodo {\n  onUpdateTodo {\n    __typename\n    id\n    name\n    description\n    createdAt\n    updatedAt\n  }\n}"
+    "subscription OnUpdateTodo {\n  onUpdateTodo {\n    __typename\n    id\n    name\n    description\n    mpuTransX\n    mpuTransY\n    mpuTransZ\n    mpuRotX\n    mpuRotY\n    mpuRotZ\n    mpuTemp\n    createdAt\n    updatedAt\n  }\n}"
 
   public init() {
   }
@@ -1395,6 +2156,13 @@ public final class OnUpdateTodoSubscription: GraphQLSubscription {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("name", type: .nonNull(.scalar(String.self))),
         GraphQLField("description", type: .scalar(String.self)),
+        GraphQLField("mpuTransX", type: .scalar(Int.self)),
+        GraphQLField("mpuTransY", type: .scalar(Int.self)),
+        GraphQLField("mpuTransZ", type: .scalar(Int.self)),
+        GraphQLField("mpuRotX", type: .scalar(Int.self)),
+        GraphQLField("mpuRotY", type: .scalar(Int.self)),
+        GraphQLField("mpuRotZ", type: .scalar(Int.self)),
+        GraphQLField("mpuTemp", type: .scalar(Int.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -1405,8 +2173,8 @@ public final class OnUpdateTodoSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, name: String, description: String? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Todo", "id": id, "name": name, "description": description, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, name: String, description: String? = nil, mpuTransX: Int? = nil, mpuTransY: Int? = nil, mpuTransZ: Int? = nil, mpuRotX: Int? = nil, mpuRotY: Int? = nil, mpuRotZ: Int? = nil, mpuTemp: Int? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Todo", "id": id, "name": name, "description": description, "mpuTransX": mpuTransX, "mpuTransY": mpuTransY, "mpuTransZ": mpuTransZ, "mpuRotX": mpuRotX, "mpuRotY": mpuRotY, "mpuRotZ": mpuRotZ, "mpuTemp": mpuTemp, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -1445,6 +2213,69 @@ public final class OnUpdateTodoSubscription: GraphQLSubscription {
         }
       }
 
+      public var mpuTransX: Int? {
+        get {
+          return snapshot["mpuTransX"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTransX")
+        }
+      }
+
+      public var mpuTransY: Int? {
+        get {
+          return snapshot["mpuTransY"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTransY")
+        }
+      }
+
+      public var mpuTransZ: Int? {
+        get {
+          return snapshot["mpuTransZ"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTransZ")
+        }
+      }
+
+      public var mpuRotX: Int? {
+        get {
+          return snapshot["mpuRotX"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuRotX")
+        }
+      }
+
+      public var mpuRotY: Int? {
+        get {
+          return snapshot["mpuRotY"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuRotY")
+        }
+      }
+
+      public var mpuRotZ: Int? {
+        get {
+          return snapshot["mpuRotZ"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuRotZ")
+        }
+      }
+
+      public var mpuTemp: Int? {
+        get {
+          return snapshot["mpuTemp"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTemp")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -1468,7 +2299,7 @@ public final class OnUpdateTodoSubscription: GraphQLSubscription {
 
 public final class OnDeleteTodoSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnDeleteTodo {\n  onDeleteTodo {\n    __typename\n    id\n    name\n    description\n    createdAt\n    updatedAt\n  }\n}"
+    "subscription OnDeleteTodo {\n  onDeleteTodo {\n    __typename\n    id\n    name\n    description\n    mpuTransX\n    mpuTransY\n    mpuTransZ\n    mpuRotX\n    mpuRotY\n    mpuRotZ\n    mpuTemp\n    createdAt\n    updatedAt\n  }\n}"
 
   public init() {
   }
@@ -1507,6 +2338,13 @@ public final class OnDeleteTodoSubscription: GraphQLSubscription {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("name", type: .nonNull(.scalar(String.self))),
         GraphQLField("description", type: .scalar(String.self)),
+        GraphQLField("mpuTransX", type: .scalar(Int.self)),
+        GraphQLField("mpuTransY", type: .scalar(Int.self)),
+        GraphQLField("mpuTransZ", type: .scalar(Int.self)),
+        GraphQLField("mpuRotX", type: .scalar(Int.self)),
+        GraphQLField("mpuRotY", type: .scalar(Int.self)),
+        GraphQLField("mpuRotZ", type: .scalar(Int.self)),
+        GraphQLField("mpuTemp", type: .scalar(Int.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -1517,8 +2355,8 @@ public final class OnDeleteTodoSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, name: String, description: String? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Todo", "id": id, "name": name, "description": description, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, name: String, description: String? = nil, mpuTransX: Int? = nil, mpuTransY: Int? = nil, mpuTransZ: Int? = nil, mpuRotX: Int? = nil, mpuRotY: Int? = nil, mpuRotZ: Int? = nil, mpuTemp: Int? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Todo", "id": id, "name": name, "description": description, "mpuTransX": mpuTransX, "mpuTransY": mpuTransY, "mpuTransZ": mpuTransZ, "mpuRotX": mpuRotX, "mpuRotY": mpuRotY, "mpuRotZ": mpuRotZ, "mpuTemp": mpuTemp, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -1554,6 +2392,69 @@ public final class OnDeleteTodoSubscription: GraphQLSubscription {
         }
         set {
           snapshot.updateValue(newValue, forKey: "description")
+        }
+      }
+
+      public var mpuTransX: Int? {
+        get {
+          return snapshot["mpuTransX"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTransX")
+        }
+      }
+
+      public var mpuTransY: Int? {
+        get {
+          return snapshot["mpuTransY"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTransY")
+        }
+      }
+
+      public var mpuTransZ: Int? {
+        get {
+          return snapshot["mpuTransZ"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTransZ")
+        }
+      }
+
+      public var mpuRotX: Int? {
+        get {
+          return snapshot["mpuRotX"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuRotX")
+        }
+      }
+
+      public var mpuRotY: Int? {
+        get {
+          return snapshot["mpuRotY"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuRotY")
+        }
+      }
+
+      public var mpuRotZ: Int? {
+        get {
+          return snapshot["mpuRotZ"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuRotZ")
+        }
+      }
+
+      public var mpuTemp: Int? {
+        get {
+          return snapshot["mpuTemp"] as? Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "mpuTemp")
         }
       }
 

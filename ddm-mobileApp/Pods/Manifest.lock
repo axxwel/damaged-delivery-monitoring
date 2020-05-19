@@ -7,32 +7,42 @@ PODS:
     - ReachabilitySwift (~> 5.0.0)
     - SQLite.swift (~> 0.12.2)
   - AWSCore (2.13.3)
+  - Charts (3.5.0):
+    - Charts/Core (= 3.5.0)
+  - Charts/Core (3.5.0)
   - ReachabilitySwift (5.0.0)
   - SQLite.swift (0.12.2):
     - SQLite.swift/standard (= 0.12.2)
   - SQLite.swift/standard (0.12.2)
   - Starscream (3.0.6)
+  - TinyConstraints (4.0.1)
 
 DEPENDENCIES:
   - AWSAppSync
+  - Charts
+  - TinyConstraints
 
 SPEC REPOS:
   trunk:
     - AppSyncRealTimeClient
     - AWSAppSync
     - AWSCore
+    - Charts
     - ReachabilitySwift
     - SQLite.swift
     - Starscream
+    - TinyConstraints
 
 SPEC CHECKSUMS:
   AppSyncRealTimeClient: 4a2ccdc1722750a1f4d76e216f9bfb1cf12f10de
   AWSAppSync: 4b91c48712913ca4f2bb38273280190e65d59a45
   AWSCore: fc361166b595e3c0183c55987743b295646c39d2
+  Charts: 40a08591df1f8ad5c223ddedfb1a06da92f24f7c
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
+  TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
 
-PODFILE CHECKSUM: 498e95ae7d9681af2ebb283a41d2e542cf2378ba
+PODFILE CHECKSUM: 8c68f9ac46f4682a39b2542a40ae5567902b6c2b
 
 COCOAPODS: 1.9.1

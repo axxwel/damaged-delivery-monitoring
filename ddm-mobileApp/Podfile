@@ -8,4 +8,9 @@ target 'ddm-mobileApp' do
   # Pods for ddm-mobileApp
   pod 'AWSAppSync'
 
+  # chart
+  pod 'Charts'
+  pod 'TinyConstraints'
+
+
 end

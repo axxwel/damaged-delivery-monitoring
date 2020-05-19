@@ -1,17 +1,20 @@
 //
-//  FormViewController.swift
+//  TabBarController.swift
 //  ddm-mobileApp
 //
-//  Created by alexandre gimeno on 15/05/2020.
+//  Created by alexandre gimeno on 19/05/2020.
 //  Copyright © 2020 alexandre gimeno. All rights reserved.
 //
 
 import UIKit
 
-class FormViewController: UIViewController {
+class TabBarController: UITabBarController {
 
+    @IBInspectable var defaultIndex: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        selectedIndex = defaultIndex
 
         // Do any additional setup after loading the view.
     }
