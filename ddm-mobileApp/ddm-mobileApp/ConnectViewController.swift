@@ -30,7 +30,6 @@ class ConnectViewController: UIViewController, CBCentralManagerDelegate, CBPerip
         centralManager = CBCentralManager(delegate: self, queue: nil)
     }
     
-    
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == CBManagerState.poweredOn {
 // We will just handle it the easy way here: if Bluetooth is on, proceed...start scan!
