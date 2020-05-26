@@ -20,6 +20,8 @@ var characteristicASCIIValue = NSString()
 
 class BLECentralViewController : UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate, UITableViewDelegate, UITableViewDataSource{
     
+    
+    
     //Data
     var centralManager : CBCentralManager!
     var RSSIs = [NSNumber]()
@@ -260,8 +262,10 @@ class BLECentralViewController : UIViewController, CBCentralManagerDelegate, CBP
             else { return }
         
         characteristicASCIIValue = ASCIIstring
-        print("Value Recieved: \((characteristicASCIIValue as String))")
+        let rawData : String = (characteristicASCIIValue as String)
+        sendData(rawData)
         NotificationCenter.default.post(name:NSNotification.Name(rawValue: "Notify"), object: self)
+        
     }
     
     
@@ -370,5 +374,6 @@ class BLECentralViewController : UIViewController, CBCentralManagerDelegate, CBP
             self.present(alertVC, animated: true, completion: nil)
         }
     }
+    
+    
 }
-

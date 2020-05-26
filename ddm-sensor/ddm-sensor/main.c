@@ -774,8 +774,9 @@ int main(void)
           mpu6050_compute_float(m_raw_int, RAW_INT_SIZE, m_datas, DATAS_SIZE);
           
           char response[UART_TX_BUF_SIZE] = "";
-          sprintf(response,"{  \"data\" : {\"Ax \" : \"%+3.2f\", \"Ay \" : \"%+3.2f\", \"Az \" : \"%+3.2f\", \"T \" : \"%+2.2f\",\"Gx \" : \"%+4.2f\", \"Gy \" : \"%+4.2f\", \"Az \" : \"%+4.2f\"}}",
+          sprintf(response,"{\"Ax\":\"%+3.2f\",\"Ay\":\"%+3.2f\",\"Az\":\"%+3.2f\",\"T\":\"%+2.2f\",\"Gx\":\"%+4.2f\",\"Gy\":\"%+4.2f\",\"Gz\":\"%+4.2f\"}",
                                m_datas[0],m_datas[1],m_datas[2],m_datas[3],m_datas[4],m_datas[5],m_datas[6]);
+          printf("%s\n",response);
           uint16_t length = strlen(response);
           ble_nus_data_send(&m_nus, response, &length, m_conn_handle);
 

@@ -19,6 +19,7 @@
 		E34D8C59247D229400705990 /* BLECentralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34D8C58247D229400705990 /* BLECentralViewController.swift */; };
 		E34D8C5B247D295500705990 /* UartModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34D8C5A247D295500705990 /* UartModuleViewController.swift */; };
 		E34D8C5D247D2C5600705990 /* PeripheralTableViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34D8C5C247D2C5600705990 /* PeripheralTableViewTableViewCell.swift */; };
+		E34D8C5F247D6F3D00705990 /* dataConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34D8C5E247D6F3D00705990 /* dataConnect.swift */; };
 		E3BF188B2474264B0078659C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF188A2474264B0078659C /* TabBarController.swift */; };
 		E3BF188D2474303B0078659C /* UUIDKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF188C2474303B0078659C /* UUIDKey.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		E34D8C58247D229400705990 /* BLECentralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLECentralViewController.swift; sourceTree = "<group>"; };
 		E34D8C5A247D295500705990 /* UartModuleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UartModuleViewController.swift; sourceTree = "<group>"; };
 		E34D8C5C247D2C5600705990 /* PeripheralTableViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralTableViewTableViewCell.swift; sourceTree = "<group>"; };
+		E34D8C5E247D6F3D00705990 /* dataConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataConnect.swift; sourceTree = "<group>"; };
 		E3BF188A2474264B0078659C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E3BF188C2474303B0078659C /* UUIDKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUIDKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +110,7 @@
 				E3434F9D246D39A200592BC8 /* LaunchScreen.storyboard */,
 				E3434FA0246D39A200592BC8 /* Info.plist */,
 				E3BF188C2474303B0078659C /* UUIDKey.swift */,
+				E34D8C5E247D6F3D00705990 /* dataConnect.swift */,
 			);
 			path = "ddm-mobileApp";
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				E3BF188D2474303B0078659C /* UUIDKey.swift in Sources */,
 				E34D8C5B247D295500705990 /* UartModuleViewController.swift in Sources */,
 				E3434F93246D399F00592BC8 /* AppDelegate.swift in Sources */,
+				E34D8C5F247D6F3D00705990 /* dataConnect.swift in Sources */,
 				E314C6E1246FE26B003F9F86 /* GraphViewController.swift in Sources */,
 				E3BF188B2474264B0078659C /* TabBarController.swift in Sources */,
 				E314C6E724711AED003F9F86 /* API.swift in Sources */,
