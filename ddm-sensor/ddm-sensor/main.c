@@ -80,9 +80,34 @@
 #include "nrf_log_ctrl.h"
 #include "nrf_log_default_backends.h"
 
+//----------------MPU6050--------------------
+#include "nrf_delay.h"
+#include "mpu6050.h"
+
+static uint8_t m_datas_readed = 0;
+
+#define RAW_BYTE_SIZE 14
+static uint8_t m_raw_byte[RAW_BYTE_SIZE];
+
+#define RAW_INT_SIZE 7
+static int16_t m_raw_int[RAW_INT_SIZE];
+
+#define DATAS_SIZE 7
+static float m_datas[DATAS_SIZE];
+
+void my_mpu6050_event_handler (uint8_t event_status)
+{
+  if(event_status != MPU6050_EVT_DONE) {
+    m_datas_readed = event_status;
+    return;
+  }
+  m_datas_readed = 1;
+}
+//-------------------------------------------
+
 #define APP_BLE_CONN_CFG_TAG            1                                           /**< A tag identifying the SoftDevice BLE configuration. */
 
-#define DEVICE_NAME                     "ddm-sensor"                               /**< Name of device. Will be included in the advertising data. */
+#define DEVICE_NAME                     "DDM-SENSOR"                               /**< Name of device. Will be included in the advertising data. */
 #define NUS_SERVICE_UUID_TYPE           BLE_UUID_TYPE_VENDOR_BEGIN                  /**< UUID type for the Nordic UART Service (vendor specific). */
 
 #define APP_BLE_OBSERVER_PRIO           3                                           /**< Application's BLE observer priority. You shouldn't need to modify this value. */
@@ -557,7 +582,7 @@ void uart_event_handle(app_uart_evt_t * p_event)
             break;
 
         case APP_UART_COMMUNICATION_ERROR:
-            APP_ERROR_HANDLER(p_event->data.error_communication); //supprim line to connect to battery.
+            //APP_ERROR_HANDLER(p_event->data.error_communication); //supprim line to connect to battery.
             break;
 
         case APP_UART_FIFO_ERROR:
@@ -711,15 +736,57 @@ int main(void)
     advertising_init();
     conn_params_init();
 
+    
+
     // Start execution.
-    printf("\r\nUART started.\r\n");
+    printf("\r+++++++++++DDM-SENSOR+++++++++++\r\n");
     NRF_LOG_INFO("Debug logging for UART over RTT started.");
     advertising_start();
+
+    //initMpu6050
+    nrf_delay_ms(1000);
+
+    mpu6050_twi_init();
+    mpu6050_init(my_mpu6050_event_handler);
+    mpu6050_conf_gyro(0);
+    mpu6050_conf_accel(0);
+    mpu6050_print_config();
 
     // Enter main loop.
     for (;;)
     {
         idle_state_handle();
+        
+        NRF_LOG_INFO("BLE UART central example started.");
+        NRF_LOG_FLUSH();
+        nrf_delay_ms(1000);
+        
+        mpu6050_read_datas(m_raw_byte, RAW_BYTE_SIZE);
+        do
+        {
+            __WFE();
+        }while (m_datas_readed == 0);
+
+        if (m_datas_readed == 1) {
+          
+          //printf("Computing datas....\n");
+          mpu6050_compute_int(m_raw_byte, RAW_BYTE_SIZE, m_raw_int, RAW_INT_SIZE);
+          mpu6050_compute_float(m_raw_int, RAW_INT_SIZE, m_datas, DATAS_SIZE);
+          
+          char response[UART_TX_BUF_SIZE] = "";
+          sprintf(response,"{  \"data\" : {\"Ax \" : \"%+3.2f\", \"Ay \" : \"%+3.2f\", \"Az \" : \"%+3.2f\", \"T \" : \"%+2.2f\",\"Gx \" : \"%+4.2f\", \"Gy \" : \"%+4.2f\", \"Az \" : \"%+4.2f\"}}",
+                               m_datas[0],m_datas[1],m_datas[2],m_datas[3],m_datas[4],m_datas[5],m_datas[6]);
+          uint16_t length = strlen(response);
+          ble_nus_data_send(&m_nus, response, &length, m_conn_handle);
+
+          memset(m_raw_byte, 0, RAW_BYTE_SIZE);
+          memset(m_raw_int, 0, RAW_INT_SIZE);
+
+          m_datas_readed = 0;
+        } else {
+          printf("Data read ERROR ---------------  0x%02x  ---------------\r", m_datas_readed);
+        }
+        
     }
 }
 

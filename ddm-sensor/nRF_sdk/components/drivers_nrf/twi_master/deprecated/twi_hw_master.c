@@ -77,9 +77,9 @@ static bool twi_master_write(uint8_t * data, uint8_t data_length, bool issue_sto
             // https://www.nordicsemi.com/eng/Products/Bluetooth-R-low-energy/nRF51822/#Downloads
             NRF_TWI1->EVENTS_ERROR = 0;
             NRF_TWI1->ENABLE       = TWI_ENABLE_ENABLE_Disabled << TWI_ENABLE_ENABLE_Pos;
-            NRF_TWI1->POWER        = 0;
+            //NRF_TWI1->POWER        = 0;
             nrf_delay_us(5);
-            NRF_TWI1->POWER        = 1;
+            //NRF_TWI1->POWER        = 1;
             NRF_TWI1->ENABLE       = TWI_ENABLE_ENABLE_Enabled << TWI_ENABLE_ENABLE_Pos;
 
             (void)twi_master_init();
@@ -150,9 +150,9 @@ static bool twi_master_read(uint8_t * data, uint8_t data_length, bool issue_stop
             // https://www.nordicsemi.com/eng/Products/Bluetooth-R-low-energy/nRF51822/#Downloads
             NRF_TWI1->EVENTS_ERROR = 0;
             NRF_TWI1->ENABLE       = TWI_ENABLE_ENABLE_Disabled << TWI_ENABLE_ENABLE_Pos;
-            NRF_TWI1->POWER        = 0;
+            //NRF_TWI1->POWER        = 0;
             nrf_delay_us(5);
-            NRF_TWI1->POWER        = 1;
+            //NRF_TWI1->POWER        = 1;
             NRF_TWI1->ENABLE       = TWI_ENABLE_ENABLE_Enabled << TWI_ENABLE_ENABLE_Pos;
 
             (void)twi_master_init();

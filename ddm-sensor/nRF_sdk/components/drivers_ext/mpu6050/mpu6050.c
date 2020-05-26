@@ -40,8 +40,11 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#include "twi_master.h"
+#include "nrf_drv_twi.h"
+
 #include "mpu6050.h"
+#include "mpu6050_reg_map.h"
+
 
 /*lint ++flb "Enter library region" */
 
@@ -51,20 +54,28 @@
 static const uint8_t expected_who_am_i = 0x68U; // !< Expected value to get from WHO_AM_I register.
 static uint8_t       m_device_address;          // !< Device address in bits [7:1]
 
-bool mpu6050_init(uint8_t device_address)
+ret_code_t mpu6050_init(uint8_t device_address)
 {
-    bool transfer_succeeded = true;
+    ret_code_t err_code = NRF_SUCCESS;
 
-    m_device_address = (uint8_t)(device_address << 1);
+     const nrf_drv_twi_config_t twi_mpu6050_config = {
+       .scl                = ARDUINO_SCL_PIN,
+       .sda                = ARDUINO_SDA_PIN,
+       .frequency          = NRF_DRV_TWI_FREQ_100K,
+       .interrupt_priority = APP_IRQ_PRIORITY_HIGH,
+       .clear_bus_init     = false
+    };
 
-    // Do a reset on signal paths
-    uint8_t reset_value = 0x04U | 0x02U | 0x01U; // Resets gyro, accelerometer and temperature sensor signal paths.
-    transfer_succeeded &= mpu6050_register_write(ADDRESS_SIGNAL_PATH_RESET, reset_value);
+    // Init twi driver, without callback == polling mode.
+    err_code = nrf_drv_twi_init(&m_twi_mpu6050, &twi_mpu6050_config, mpu6050_internal_event_handler, NULL);
+    if(err_code != NRF_SUCCESS) {
+      NRF_LOG_INFO("ERROR on twi init, tx");
+      return err_code;
+    }
 
-    // Read and verify product ID
-    transfer_succeeded &= mpu6050_verify_product_id();
-
-    return transfer_succeeded;
+    nrf_drv_twi_enable(&m_twi_mpu6050);
+    
+    return err_code;
 }
 
 bool mpu6050_verify_product_id(void)
