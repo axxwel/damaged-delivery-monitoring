@@ -55,14 +55,26 @@ class GraphViewController: UIViewController {
     }
     
     func getChartValue(name : String) -> [ChartDataEntry] {
-        
-        let values : [ChartDataEntry] = [
+        var values : [ChartDataEntry] = [
             ChartDataEntry(x: 0, y: 10),
             ChartDataEntry(x: 1, y: 30),
             ChartDataEntry(x: 2, y: 50),
             ChartDataEntry(x: 3, y: 10),
             ChartDataEntry(x: 4, y: 20),
         ]
+        /*
+        let graph : Array<graphData> = runQuery()
+        
+        for i in graph {
+            let xValue = i.mpuTemp
+            let timeValue = Double(i.createAt) ?? 0.0
+            values.append(ChartDataEntry(x: Double(timeValue) , y: Double(xValue)))
+            
+        }
+        */
+        
+        
+        
         return values
     }
     

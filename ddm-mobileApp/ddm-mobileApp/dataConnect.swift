@@ -40,7 +40,6 @@ var graph : Array<graphData> = Array()
                let gy = jsonResult["Gy"] as? String,
                let gz = jsonResult["Gz"] as? String,
                let temp = jsonResult["T"] as? String {
-                
                 runMutation(tx,ty,tz,gx,gy,gz,temp)
                 
                } else {
@@ -105,6 +104,7 @@ var graph : Array<graphData> = Array()
                     mpuRotZ : ($0?.mpuRotZ)!,
                     mpuTemp : ($0?.mpuTemp)!)
                 graph.append(g)
+            
             }
             return
         }
@@ -130,5 +130,3 @@ var graph : Array<graphData> = Array()
             print("Error starting subscription.")
         }
     }
-
-
